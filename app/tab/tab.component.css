@@ -1,0 +1,51 @@
+.example-tab-icon {
+    margin-right: 8px;
+  }
+  .container{width: 1068px;border: 1px solid;float: right}
+  .left-container{width: 200px;border: 1px solid;float: left}
+  .btns{border: 1px solid black;
+    color: white;
+    background: blue;
+    width: 182px;
+    font-size: 20px;
+    }
+    .vertical-menu {
+      width: 200px;
+  }
+  
+  .vertical-menu a {
+      background-color: #eee;
+      color: black;
+      display: block;
+      padding: 12px;
+      text-decoration: none;
+  }
+  
+  .vertical-menu a:hover {
+      background-color: #ccc;
+  }
+  
+  .vertical-menu a.active {
+      background-color: #4CAF50;
+      color: white;
+  }
+  .left{width:260px;background-color:#eee;height:500px;float: left;border:1px solid black}
+.right{width:960px;background-color:hsl(34, 67%, 73%);;height:500px;float: right; }
+.clr{clear: both;}
+
+.left a {
+    background-color: hsl(34, 67%, 73%);;
+    color: black;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+}
+
+.left a:hover {
+    background-color: #ccc;
+}
+
+.left a.active {
+    background-color: #4CAF50;
+    color: white;
+}

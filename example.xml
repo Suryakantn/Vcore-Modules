@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<userdata>
+<user>
+<id>1</id>
+<name>Suryakant</name>
+<tabname>My Data</tabname>
+<path>userdata</path>
+</user>
+<user>
+<id>2</id>
+<name>Nana</name>
+<tabname>XML Data</tabname>
+<path>xmldata</path>
+</user>
+<user>
+<id>3</id>
+<name>Nitish</name>
+</user>
+</userdata>

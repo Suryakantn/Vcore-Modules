@@ -1,0 +1,18 @@
+<div class="header" >
+    <a href="#default" class="logo">CompanyLogo</a>
+    <div class="header-right">
+        <ng-container *ngIf="fname; else elseBlock">
+            <a routerLink="/" ><button class="btn btn-primary btns">Home</button></a>                
+            <a routerLink="/tabs/groupmodules/searchbox" ><button class="btn btn-primary btns" >{{fname}}</button></a>                
+            <a routerLink="" ><button class="btn btn-primary btns" (click)="Logout()">Logout</button></a>                
+        </ng-container>
+        <ng-template #elseBlock>
+      <ng-container *ngFor="let nav of Navigations">
+      <a routerLink="{{nav.path}}" ><button class="btn btn-primary btns">{{nav.label}}</button></a>                
+    </ng-container>
+  </ng-template>
+    </div>
+  </div>
+  
+
+  

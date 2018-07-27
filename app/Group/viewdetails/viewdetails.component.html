@@ -1,0 +1,110 @@
+
+<div class="wrapper">
+  <ul class="breadcrumb">
+  <li *ngFor="let q of urlArray ; let i = index" class="breadcrumb-item active">
+  <a [routerLink]="['/tabs/groupmodules/showdata',q]" >{{q}} </a> </li> 
+  <!-- <span *ngIf='i<arrySize-1'>>></span> -->
+ </ul>
+</div>
+<div class="container">
+    <div class="container-fluid " id="table1" *ngFor="let ug of usergroup" >
+        <div class="row " >
+          <div class="col-md col1 rowback ">Group Name </div>
+          <div class="col-md col1 ">{{ug.GROUP_NAME}}</div>
+          <div class="col-md col1 rowback ">Parent Group</div>
+          <div class="col-md col1 ">{{ug.PARENT_GROUP}}</div>
+          <div class="col-md col1 rowback ">Organization Type</div>
+          <div class="col-md col1 ">{{ug.ORGANIZATION_TYPE}}</div>
+        </div> 
+        <div class="row ">
+            <div class="col-md col1 rowback ">Group Description </div>
+            <div class="col-md col1 ">{{ug.DESCRIPTION}}  </div>
+        </div>
+        <div class="row " >
+            <div class="col-md col1 rowback ">Address1</div>
+            <div class="col-md col1 ">{{ug.ADDRESS1}}</div>
+            <div class="col-md col1 rowback ">Address2</div>
+            <div class="col-md col1 ">{{ug.ADDRESS2}}</div>
+            <div class="col-md col1 rowback ">Zip</div>
+            <div class="col-md col1 ">{{ug.ZIP}}</div>
+          </div> 
+          <div class="row " >
+              <div class="col-md col1 rowback ">Country</div>
+              <div class="col-md col1 ">{{ug.COUNTRY_ID}}</div>
+              <div class="col-md col1 rowback ">State</div>
+              <div class="col-md col1 ">{{ug.STATE_ID}}</div>
+              <div class="col-md col1 rowback ">City</div>
+              <div class="col-md col1 ">{{ug.CITY_ID}}</div>
+            </div> 
+            <div class="row " >
+                <div class="col-md col1 rowback ">Phone</div>
+                <div class="col-md col1 ">{{ug.PHONE}}</div>
+                <div class="col-md col1 rowback ">Email</div>
+                <div class="col-md col1 ">{{ug.EMAIL}}</div>
+                <div class="col-md col1 rowback ">Fax</div>
+                <div class="col-md col1 ">{{ug.FAX}}</div>
+              </div> 
+              <div class="row " >
+                  <div class="col-md col1 rowback ">Language</div>
+                  <div class="col-md col1 ">{{ug.LANGUAGE_ID}}</div>
+                  <div class="col-md col1 rowback ">Currency</div>
+                  <div class="col-md col1 ">{{ug.CURRENCY_ID}}</div>
+                  <div class="col-md col1 rowback ">Web</div>
+                  <div class="col-md col1 ">{{ug.WEB}}</div>
+                </div>   
+      </div>
+  
+<div class="row " >
+    <div class="col-md  header1 ">Key Contacts</div>
+</div>
+<div class="container-fluid " id="table1" >
+    <div class="row rowback ">
+      <div class="col-md  ">Name</div>
+      <div class="col-md  ">Phone</div>
+      <div class="col-md  ">Email</div>
+      <div class="col-md  ">Fax</div>
+      <div class="col-md ">Mobile</div>
+      <div class="col-md ">Designation</div>
+    </div> 
+    <div class="row " *ngFor="let uk of keydata" >
+      <div class="col-md col1 ">{{uk.CONTACT_NAME}}</div>
+      <div class="col-md col1 ">{{uk.CONTACT_PHONE}}</div>
+      <div class="col-md col1 ">{{uk.CONTACT_EMAIL}}</div>
+      <div class="col-md col1 ">{{uk.CONTACT_FAX}}</div>
+      <div class="col-md col1 ">{{uk.CONTACT_MOBILE}}</div>
+      <div class="col-md col1 ">{{uk.CONTACT_DESIGNATION}}</div>
+    </div> 
+  </div>
+</div>
+
+<div class="container2">
+    <div class="row " >
+        <div class="col-md  header1 ">Sub Groups</div>
+    </div>  
+    <ng-container *ngIf="userData; else elseBlock">
+      <div class="container-fluid " id="table1"  [hidden]="isLoaded" >
+          <div class="row rowback ">
+            <div class="col-md  ">GROUP_ID</div>
+            <div class="col-md  ">GROUP_NAME</div>
+            <div class="col-md  ">PARENT_GROUP</div>
+            <div class="col-md  ">DESCRIPTION</div>
+            <div class="col-md ">Actions</div>
+          </div> 
+          <div class="row " *ngFor="let q of userData | paginate: { itemsPerPage:5, currentPage: p } ">
+            <div class="col-md col1 ">{{q.GROUP_ID}}</div>
+            <div class="col-md col1 ">{{q.GROUP_NAME}}</div>
+            <div class="col-md col1 ">{{q.PARENT_GROUP}}</div>
+            <div class="col-md col1 ">{{q.DESCRIPTION}}</div>
+            <div class="col-md btnclass col1">
+               <a [routerLink]="['/tabs/groupmodules/editgroup',q.GROUP_ID]"><input type="button" class="btn btn-info" value="Edit"></a> 
+               <a [routerLink]="['/tabs/groupmodules/viewgroupdetails',q.GROUP_ID]"><input type="button" class="btn btn-info" value="view"></a> 
+               <a routerLink="/tabs/groupmodules/subgroup"><input type="button" class="btn btn-info" value="Subgroup"></a> 
+            </div>
+          </div> 
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </div>
+  </ng-container>
+  <ng-template #elseBlock>
+  <h1>No subgroups presnt here</h1>
+  </ng-template>
+  </div>

@@ -1,0 +1,36 @@
+<app-header></app-header>
+<div class="regi-container">
+<div class="container1"  >
+  <h1 style="text-align: center">Login Here...</h1>
+      <form  name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate >
+        <div class="error">{{errormessage}}</div>
+      <table class="form" >
+          <tr><td><p>Email</p></td>
+              <td><div class="input-box">
+                <input type="email" name="email"  [(ngModel)]="user.email"  class="form-control" placeholder="Email" #email="ngModel" [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" required email >
+            </div></td></tr> 
+            <tr><td></td>
+              <td>
+              <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
+                  <div *ngIf="email.errors.required">Email is required</div>
+                  <div *ngIf="email.errors.email">Email must be a valid email address</div>
+              </div></td></tr> 
+            <tr><td><p>Password</p></td>  
+              <td><div class="input-box">
+                <input type="password" name="password"  [(ngModel)]="user.password"  class="form-control" placeholder="Password" #password="ngModel" [ngClass]="{ 'is-invalid': f.submitted && password.invalid }" required>
+            </div></td></tr>  
+            <tr><td></td>
+              <td>
+                  <div *ngIf="f.submitted && password.invalid" class="invalid-feedback">
+                      <div *ngIf="password.errors.required">Password is required</div>
+                  </div></td></tr>               
+      </table>
+      <div class="user-link" >Not a member <a routerLink="/register" routerLinkActive="active" style="color: blue">Register </a> here.</div>
+        <div class="btns">
+          <div class="sub1"><button type="submit" class="btn btn-success" >Login</button></div>
+          <div><button type="reset" class="btn btn-success"  >Reset</button></div>
+        </div>
+    </form>
+</div>
+</div>
+<app-footer></app-footer>

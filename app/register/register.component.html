@@ -1,0 +1,71 @@
+<app-header></app-header>
+<div class="regi-container">
+<div class="container1"  >
+  <h1 style="text-align: center">Registration Form</h1>
+      <form  name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+          <div class="error">{{errormessage}}</div>
+      <table class="form" >
+          <tr><td><p>First Name</p> </td>
+           <td><div class="input-box">
+             <input type="text" name="firstname" required pattern="/^[a-zA-Z ]*$/" [(ngModel)]="user.firstname"  class="form-control" placeholder="First Name" #firstname="ngModel" [ngClass]="{ 'is-invalid': f.submitted && firstname.invalid }"   >
+            </div></td>
+          </tr>
+            <tr><td></td>
+              <td>
+              <div *ngIf="f.submitted && firstname.invalid" class="invalid-feedback">
+                  <div *ngIf="firstname.errors.required">First Name is required</div>
+                  <div *ngIf="firstname.errors?.pattern">First Name should contain only chararcter</div>
+              </div>
+            </td> </tr>
+
+          <tr><td><p>Last Name</p></td>
+            <td><div class="input-box">
+                <input type="text" name="lastname"  [(ngModel)]="user.lastname"  class="form-control" placeholder="Last Name" #lastname="ngModel" [ngClass]="{ 'is-invalid': f.submitted && lastname.invalid }" required>
+              </div></td></tr> 
+              <tr><td></td>
+                <td>
+              <div *ngIf="f.submitted && lastname.invalid" class="invalid-feedback">
+                  <div *ngIf="lastname.errors.required">Last Name is required</div>
+              </div></td></tr>
+         
+          <tr><td><p>Email</p></td>
+              <td><div class="input-box">
+                <input type="email" name="email"  [(ngModel)]="user.email"  class="form-control" placeholder="Email" #input (blur)="oncheckEmail($event.target.value)" #email="ngModel" [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" required email   >
+            </div></td></tr> 
+            <tr><td></td>
+              <td>
+              <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
+                  <div *ngIf="email.errors.required">Email is required</div>
+                  <div *ngIf="email.errors.email">Email must be a valid email address</div>
+                  <div *ngIf="email.errors.input">{{errormessage}}</div>
+              </div></td></tr>
+            
+          <tr><td><p>Gender</p> </td>
+           <td><div class="input-tag">
+             Male<input type="radio"  name="gender" value="male"  [(ngModel)]="user.gender" class="gen" checked="false" autocomplete="off">
+             Female<input type="radio"  name="gender" value="female"  [(ngModel)]="user.gender" class="gen">
+             Others<input type="radio" name="gender" value="others"  [(ngModel)]="user.gender" class="gen">
+            </div></td></tr>          
+          <tr><td><p>Mobile</p></td>
+            <td><div class="input-box">
+                <input type="text" name="mobile" pattern="/^(\+\d{1,3}[- ]?)?\d{10}$/" [(ngModel)]="user.mobile"  class="form-control" placeholder="Mobile Number" #mobile="ngModel" [ngClass]="{ 'is-invalid': f.submitted && mobile.invalid }" required >
+                </div>
+              </td>
+          </tr> 
+          <tr><td></td>
+            <td>
+              <div *ngIf="f.submitted && mobile.invalid" class="invalid-feedback">
+                  <div *ngIf="mobile.errors.required">Mobile Number is required</div>
+                  <div *ngIf="mobile.errors.pattern">Mobile Number is invalid</div>
+              </div></td>
+         </tr>  
+                         
+      </table>
+      <div class="user-link">Already a member <a routerLink="/login" routerLinkActive="active" style="color: blue">Login</a> here</div>
+      <div class="btns">  
+        <div class="sub1"><button type="submit" class="btn btn-success sub" >Register</button></div>
+      </div>
+    </form>
+    </div>
+    <app-footer></app-footer>
+    

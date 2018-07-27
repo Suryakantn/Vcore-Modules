@@ -1,0 +1,37 @@
+
+<html>
+    <head>            
+      </head>
+        <body>
+      
+        <form class="example" style="margin:auto;max-width:500px;margin-bottom: 27px;" >
+          <input type="text" placeholder="Search.." name="search2" id="search2" >
+          <button type="submit"  (click)="onSearch()"  ><i class="fa fa-search"></i></button>
+        </form>
+        <div class="container-fluid " id="table1"  [hidden]="isLoaded" >
+          <div class="row rowback ">
+            <div class="col-md  ">GROUP_ID</div>
+            <div class="col-md  ">GROUP_NAME</div>
+            <div class="col-md  ">PARENT_GROUP</div>
+            <div class="col-md  ">DESCRIPTION</div>
+            <div class="col-md ">Actions</div>
+          </div> 
+          <div class="row " *ngFor="let q of userdata | paginate: { itemsPerPage:5, currentPage: p } ">
+            <div class="col-md col1 ">{{q.GROUP_ID}}</div>
+            <div class="col-md col1 ">{{q.GROUP_NAME}}</div>
+            <div class="col-md col1 ">{{q.PARENT_GROUP}}</div>
+            <div class="col-md col1 ">{{q.DESCRIPTION}}</div>
+            <div class="col-md btnclass col1">
+               <a [routerLink]="['/tabs/groupmodules/editgroup',q.GROUP_ID]"><input type="button" class="btn btn-info" value="Edit"></a> 
+               <a [routerLink]="['/tabs/groupmodules/viewgroupdetails',q.GROUP_ID]"><input type="button" class="btn btn-info" value="view"></a> 
+               <a routerLink="/tabs/groupmodules/subgroup"><input type="button" class="btn btn-info" value="Subgroup"></a> 
+            </div>
+          </div> 
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </div>
+    
+    
+      
+        </body>
+        </html> 
+        

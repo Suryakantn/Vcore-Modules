@@ -1,0 +1,33 @@
+export class Registers {
+    id: number;
+    fname: string;
+    username:string;
+    lname: string;
+    email: string;
+    password: string;
+    message?:string;
+    code?: number;
+    GROUP_ID?:number; 
+    SITE_ID:number;
+    GROUP_NAME?:string;
+    GROUP_LEVEL?:number;
+    PARENT_GROUP?:string;
+    STATUS?:number;
+    PARENT_GROUP_NAME?:string;
+    DESCRIPTION?:string;
+    User_Name?:string;
+    EMAIL_ID?:string;
+    SEQUENCE_ID?:string;
+    USER_ID?:number;
+    UPDATER_BY?:number;
+    CREATED_BY?:number;
+    Role_Name?:string;
+    Role_Description?:string;
+    Role_Id?:number;
+    MENU_NAME?:string;
+    MENU_ID?:string;
+    SUBMENU_ID?:number;
+    SUBMENU_NAME?:string;
+    permision_name?:string;
+    permision_value?:number;
+}

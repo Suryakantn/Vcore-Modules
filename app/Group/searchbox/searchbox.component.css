@@ -1,0 +1,39 @@
+.container{float: left;display: inline-flex}
+.search{font-size: 23px;background: #110761;
+    color: white;
+    text-align: center;
+    width: 79px;border: 0px solid;}
+.serinp{border: 1px solid;width: 300px;}
+.rowback{background: #b9bdbd6b;}
+.btnclass{display: inherit;}
+.col1{border: 1px solid #d4c8c8;}
+form.example input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 80%;
+    background: #f1f1f1;
+}
+
+form.example button {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: #2196F3;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+}
+
+form.example button:hover {
+    background: #0b7dda;
+}
+
+form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+}

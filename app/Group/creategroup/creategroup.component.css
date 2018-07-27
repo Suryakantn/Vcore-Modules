@@ -1,0 +1,39 @@
+.container1{
+    border: 1px solid;
+    font-size: 20px;
+    display: inline-flex;
+    background: #c4bccc;
+}
+.pgroup{font-weight: bold;color: blue;margin-left: 20px;
+    margin-right: 20px;}
+.container2{
+    width: 1052px;border: 1px solid;margin-top: 10px;margin-bottom: 10px;padding: 10px
+}
+.ifields{font-size: 20px;font-weight: bold;margin-right: 14px;margin-left: 14px;}
+input{border: 1px solid}
+.savebtn{background: red;color: white;font-size: 19px; margin-right: 28px;}
+.addbtn{font-size: 10px;background: orange;color: black;margin-right: 10px;margin-left: 10px;font-weight: bold;float: right;}
+.deletebtn{font-size: 10px;background: orange;color: black;font-weight: bold;float: right;}
+.ugkeycont{border: 1px solid;width: 900px;}
+.ugkey{border: 1px solid}
+.ugroupdetails{border: 1px solid}
+.ugdetails{border: 1px solid}
+input[type = submit]{
+    width:100px;
+background-color:#35c8ef;
+border-radius:5px;
+border:2px solid blue;
+color:#fff
+    }
+.error{color: red;
+    font-size: 13px;
+    text-align: center;}
+.invalid-feedback{color: red}
+.btns1{margin-right: 15px;}
+.btngr{margin-left: 207px;display: inline-flex;}
+.rowback{background: #b9bdbd6b;font-weight:bold }
+.btnclass{display: inherit;}
+.col1{border: 1px solid #d4c8c8;}
+.header1{background: #484a4a6b;font-weight: bold;font-size: 22px;margin-top: 20px;margin-bottom: 10px;}
+.header2{background: #b9c1c16b;font-weight: bold;font-size: 22px;margin-top: 20px;margin-bottom: 10px;}
+.header3{font-weight: bold;font-size: 15px;margin-top: 20px;margin-bottom: 10px;color: red}

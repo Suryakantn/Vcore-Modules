@@ -1,0 +1,19 @@
+  <div class="container-fluid " id="table1"  [hidden]="isLoaded" >
+        <div class="row rowback ">
+          <div class="col-md  ">Role ID</div>
+          <div class="col-md  ">Role Name</div>
+          <div class="col-md  ">Role Description</div>
+          <div class="col-md  ">Edit</div>
+          <div class="col-md "> Manage Previlege</div>
+        </div> 
+        <div class="row " *ngFor="let q of user">
+          <div class="col-md col1 ">{{q.role_id}}</div>
+          <div class="col-md col1 ">{{q.role_name}}</div>
+          <div class="col-md col1 ">{{q.role_description}}</div>
+          <div class="col-md col1">
+             <a [routerLink]="['/role', {'paramKey': q.role_id}]"><input type="button" class="btn btn-info" value="Edit"></a> </div>
+             <div class="col-md col1">
+             <a [routerLink]="['../managepre',q.role_id]"><input type="button" class="btn btn-info" value="Manage Privilleges"></a> 
+          </div>
+        </div> 
+      </div>

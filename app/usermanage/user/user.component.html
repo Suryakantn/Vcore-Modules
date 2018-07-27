@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <!-- <input type="button" value="show" onclick="loadxmldata()"> -->
+<div class="main">
+  <div class="left">
+    <a routerLink="/tabs/user/role">Role</a>
+    
+    <a routerLink="/tabs/user/showRole">ShowRole</a>
+    
+    <a routerLink="/tabs/user/submenus">Submensus </a>
+
+    <a routerLink="/tabs/user/usercreation">Show USer </a>
+     
+   </div>
+   <!-- <div class="clr"></div>  -->
+ <div class="right"> 
+    <router-outlet></router-outlet>    
+ </div>
+  <div class="clr"></div> 
+
+</div>
+ 
+</body>
+<!-- <script>
+  //http://localhost:3002/get
+
+      function showData(){
+    $.getJSON(mydata, function(result) {
+      alert("mydata is"+mydata);
+
+var json = result;
+
+/*for (var i = 0; i < json.length; i++) {
+    tr = $('<tr/>');
+            tr.append("<td>" + json[i].id + "</td>");
+            tr.append("<td>" + json[i].name + "</td>");
+            tr.append("<td>" + json[i].email + "</td>");
+            tr.append("<td>" + json[i].city + "</td>");
+            tr.append("<td>  <a href='/student/get/"+json[i].id+"'>edit</a> </td>");
+            tr.append("<td>  <a href='/student/delete/"+json[i].id+"'>delete</a> </td>");
+            $('table').append(tr);
+} */
+});
+}
+  
+</script> -->
+</html>

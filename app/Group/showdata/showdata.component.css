@@ -1,0 +1,19 @@
+/* .container{float: left;display: inline-flex;} */
+
+.serinp{border: 1px solid;width: 300px;}
+.wrapper{width: 800px ;margin:auto}
+.sym{font-size: 30px}
+li{display: inline;}
+.container{border: 1px solid;margin-bottom: 10px}
+td{padding-left: 5px;padding-right: 5px;font-size: 19px;
+}
+th{padding-left: 5px;
+    padding-right: 5px;
+    font-size: 17px;}
+    li{display: inline;}
+.container2{margin-top: 20px}
+
+.rowback{background: #b9bdbd6b;font-weight:bold }
+.btnclass{display: inherit;}
+.col1{border: 1px solid #d4c8c8;}
+.header1{background: #484a4a6b;font-weight: bold;font-size: 22px;margin-top: 20px;margin-bottom: 10px;}
