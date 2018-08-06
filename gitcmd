@@ -1,0 +1,54 @@
+	#Git install cmd: 
+	sudo apt-get install git
+	git config --global user.name "username"
+	git config --global user.email "email"
+
+	1)git init  ===>For git initalization
+	2)git status  ===>checking status
+	3)git add .  ==>for adding files to local machine
+	4)git commit -m "msg" ==>for commiting to local repositery
+	5)git remote add origin <path> ==> for adding remote origin from your machine to Github
+	6)git pull --rebase origin master ==> for fetching data from github to Local Machine
+	7)git push -u origin master ==>for changing files to Github account
+	8)sudo chown --recursive $(whoami) .
+
+	# download a repository on GitHub.com to our machine
+	git clone https://github.com/me/repo.git
+	# change into the `repo` directory
+	cd repo
+	# create a new branch to store any new changes
+	git branch my-branch
+	# switch to that branch (line of development)
+	git checkout my-branch
+	# make changes, for example, edit `file1.md` and `file2.md` using the text editor
+	# stage the changed files
+	git add file1.md file2.md
+	# take a snapshot of the staging area (anything that's been added)
+	git commit -m "my snapshot"
+	# push changes to github
+	git push --set-upstream origin my-branch
+
+
+	# assumption: a project called `repo` already exists on the machine, and a new branch has been pushed to GitHub.com since the 		last time changes were made locally
+
+	# change into the `repo` directory
+	cd repo
+
+	# update all remote tracking branches, and the currently checked out branch
+	git pull
+
+	# change into the existing branch called `feature-a`
+	git checkout feature-a
+
+	# make changes, for example, edit `file1.md` using the text editor
+
+	# stage the changed file
+	git add file1.md
+
+	# take a snapshot of the staging area
+	git commit -m "edit file1"
+
+	# push changes to github
+	git push
+
+
