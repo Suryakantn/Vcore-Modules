@@ -2,7 +2,9 @@
 	sudo apt-get install git
 	git config --global user.name "username"
 	git config --global user.email "email"
-
+	
+	Path: git@github.com:Suryakantn/Vcore-Modules.git
+	
 	1)git init  ===>For git initalization
 	2)git status  ===>checking status
 	3)git add .  ==>for adding files to local machine
