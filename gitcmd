@@ -52,6 +52,13 @@
 	git push
 
 	//All Git Command here
+	#Generating ssh key	
+	ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+	
+	#Adding you ssh key to the ssh agent
+	eval "$(ssh-agent -s)"
+	ssh-add ~/.ssh/id_rsa
+	
 	sudo apt-get install xclip
 	# Downloads and installs xclip. If you don't have `apt-get`, you might need to use another installer
 
